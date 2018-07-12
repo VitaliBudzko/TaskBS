@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC68E1C620F7FCE100C48875 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC68E1C520F7FCE100C48875 /* Constants.swift */; };
+		DC68E1C820F806CC00C48875 /* PointUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC68E1C720F806CC00C48875 /* PointUIView.swift */; };
 		DCA0C31A20EEBA7700B04061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA0C31920EEBA7700B04061 /* AppDelegate.swift */; };
 		DCA0C31C20EEBA7700B04061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA0C31B20EEBA7700B04061 /* ViewController.swift */; };
 		DCA0C31F20EEBA7700B04061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA0C31D20EEBA7700B04061 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC68E1C520F7FCE100C48875 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DC68E1C720F806CC00C48875 /* PointUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointUIView.swift; sourceTree = "<group>"; };
 		DCA0C31620EEBA7700B04061 /* TaskBalinaSoft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskBalinaSoft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA0C31920EEBA7700B04061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCA0C31B20EEBA7700B04061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,10 +62,12 @@
 			children = (
 				DCA0C31920EEBA7700B04061 /* AppDelegate.swift */,
 				DCA0C31B20EEBA7700B04061 /* ViewController.swift */,
+				DC68E1C520F7FCE100C48875 /* Constants.swift */,
 				DCA0C31D20EEBA7700B04061 /* Main.storyboard */,
 				DCA0C32320EEBA7700B04061 /* Assets.xcassets */,
 				DCA0C32520EEBA7700B04061 /* LaunchScreen.storyboard */,
 				DCA0C32820EEBA7800B04061 /* Info.plist */,
+				DC68E1C720F806CC00C48875 /* PointUIView.swift */,
 				DCA0C32020EEBA7700B04061 /* TaskBalinaSoft.xcdatamodeld */,
 			);
 			path = TaskBalinaSoft;
@@ -142,6 +148,8 @@
 				DCA0C31C20EEBA7700B04061 /* ViewController.swift in Sources */,
 				DCA0C31A20EEBA7700B04061 /* AppDelegate.swift in Sources */,
 				DCA0C32220EEBA7700B04061 /* TaskBalinaSoft.xcdatamodeld in Sources */,
+				DC68E1C620F7FCE100C48875 /* Constants.swift in Sources */,
+				DC68E1C820F806CC00C48875 /* PointUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         forRegistrationButton.layer.cornerRadius = 5
+        forRegistrationButton.layer.masksToBounds = true
+        forRegistrationButton.setGradientBackground(colorOne: Colors.greenblue, colorTwo: Colors.turquoise)
     }
 
     override func didReceiveMemoryWarning() {
