@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var email = "jobs@balinasoft.com"
+    var password = "1111"
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var firstImageView: UIImageView!
@@ -26,51 +28,55 @@ class ViewController: UIViewController {
         
         messageLabel.isHidden = true
         
-        guard var email = emailTextField.text, emailTextField.text?.characters.count != 0 else {
+        guard var _ = emailTextField,
+            emailTextField.text?.count != 0 else {
             messageLabel.isHidden = false
-            messageLabel.text = "Please enter your email"
+            messageLabel.text = "Please enter your email."
             return
         }
         
-        if isValidEmail(emailID: email) == false {
+        if isValidEmail(emailID: emailTextField.text!) == false {
             messageLabel.isHidden = false
-            messageLabel.text = "Please enter valid email address"
+            messageLabel.text = "Please enter valid email address."
         }
         
-        guard var password = passwordTextField.text, passwordTextField.text?.characters.count != 0 else {
+        guard var _ = passwordTextField,
+            passwordTextField.text?.count != 0 else {
             messageLabel.isHidden = false
-            messageLabel.text = "Please enter your password"
-            return
-            }
-        
-            if (passwordTextField.text?.characters.count)! < 3 {
-            messageLabel.isHidden = false
-            messageLabel.text = "Password is too short. Please enter longer password"
+            messageLabel.text = "Please enter your password."
             return
         }
         
-        if (passwordTextField.text?.characters.count)! > 10 {
+        if isValidPassword(password: passwordTextField.text!) == false {
             messageLabel.isHidden = false
-            messageLabel.text = "Password is too long. Please enter shorter password"
-            return
+            messageLabel.text = "Please enter valid password."
         }
         
-        if isValidPassword(password) == false {
+        if (passwordTextField.text?.count)! < 3 {
             messageLabel.isHidden = false
-            messageLabel.text = "Password is wrong. Please enter valid password"
+            messageLabel.text = "Password is too short. Please enter longer password."
         }
         
-        if isValidEmail(emailID: email) == true && isValidPassword(password) == true && (passwordTextField.text?.characters.count)! >= 10 && (passwordTextField.text?.characters.count)! <= 3 {
-            print("Wellcome!")
+        if (passwordTextField.text?.count)! > 10 {
+            messageLabel.isHidden = false
+            messageLabel.text = "Password is too long. Please enter shorter password."
+        }
+        
+        if email == emailTextField.text && password == passwordTextField.text && password.count <= 10 && password.count >= 3 {
+            messageLabel.isHidden = false
+            messageLabel.text = "Wellcome!"
         }
     }
+    
     func isValidEmail(emailID: String) -> Bool {
+        
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        
         return emailTest.evaluate(with: emailID)
     }
     
-    func isValidPassword(_ password : String) -> Bool{
+    func isValidPassword(password: String) -> Bool{
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$")
         
@@ -101,7 +107,6 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,4 +119,3 @@ class ViewController: UIViewController {
         view.frame.origin.y = -135
     }
 }
-
